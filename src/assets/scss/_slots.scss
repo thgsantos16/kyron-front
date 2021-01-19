@@ -1,0 +1,65 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
+
+// Slot with a Copy text
+.copy-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52vh;
+    min-height: 300px;
+    text-align: center;
+    background: center/cover;
+    color: #FFF;
+    text-shadow: 2px 2px 5px #000;
+  
+    h1, h2, h3 {
+      width: 100%;
+      font-size: 5rem;
+    }
+  
+    small {
+      font-size: 1.8rem;
+    }
+}
+
+// Slot with an Image and a text
+.image-text {
+    height: 100vh;
+    text-align: center;
+
+    .image {
+        background: center/cover;
+    }
+
+    .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+
+        > div {
+            padding: 124px;
+        }
+  
+        h1, h2, h3 {
+            width: 100%;
+            font-size: 4rem;
+        }
+
+        .eyebrow {
+            height: 5px;
+            margin: 20px 0 34px;
+            width: 160px;
+            background-color: var(--primary);
+        }
+    
+        small {
+            font-size: 1.6rem;
+        }
+
+        .long-text {
+            margin-top: 20px;
+        }
+    }
+}
