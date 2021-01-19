@@ -2,7 +2,12 @@
   <div class="product container-fluid">
     <div class="row">
       <div class="col-lg images">
-
+        <div class="images-content">
+          <div class="bigger"></div>
+          <div class="image-tray">
+            <div class="smaller" v-for="n in 6" :key="n"></div>
+          </div>
+        </div>
       </div>
       <div class="col-lg details">
         <h1>{{ $route.params.product }}</h1>
@@ -130,7 +135,7 @@
     </div>
 
     <div class="row image-text">
-      <div class="col-lg text">
+      <div class="col-lg order-12 order-lg-1 text">
         <div>
           <h2>Just a super Title!</h2>
 
@@ -150,7 +155,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg image"></div>
+      <div class="col-lg order-2 image"></div>
     </div>
 
   </div>
@@ -197,6 +202,47 @@ export default {
     text-transform: capitalize;
   }
 
+  .images {
+    text-align: right;
+    padding: 70px 16px;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 80vh;
+
+    .images-content {
+      width: 90%;
+      max-width: 700px;
+
+      .bigger {
+        width: 100%;
+        height: 25vw;
+        background: center/cover no-repeat;
+        background-image: url(../assets/img.jpg);
+        box-shadow: 0 0 7px #00000055;
+      }
+
+      .image-tray {
+        padding: 7px 0;
+        width: 100%;
+        overflow: auto;
+        white-space:nowrap;
+
+        .smaller {
+          width: 192px;
+          height: 108px;
+          background: center/cover no-repeat;
+          background-image: url(../assets/img.jpg);
+          display: inline-block;
+          margin-right: 7px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
   .details {
     padding: 70px;
 
@@ -226,6 +272,33 @@ export default {
   .image-text {
     .image {
       background-image: url(../assets/concept.jpg);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .images {
+      padding: 25px;
+      min-height: 0;
+
+      .images-content {
+        width: 100%;
+
+        .bigger {
+          display: none;
+        }
+
+        .image-tray {
+          padding: 0;
+
+          .smaller {
+            width: 100%;
+            height: 50vh;
+          }
+        }
+      }
+    }
+    .details {
+      padding: 25px;
     }
   }
 }
