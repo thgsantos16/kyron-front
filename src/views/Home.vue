@@ -27,6 +27,14 @@ export default {
   position: absolute;
   align-items: center;
   justify-content: center;
+
+  .logo {
+    max-width: 80%;
+
+    img {
+      max-width: 100%;
+    }
+  }
 }
 
 </style>
